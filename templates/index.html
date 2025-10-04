@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amadeus Flight Search</title>
+</head>
+<body>
+    <h1>Flight Search</h1>
+    <form method="POST" action="/search">
+        <label for="origin">Origin:</label>
+        <input type="text" id="origin" name="origin" required><br><br>
+
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" required><br><br>
+
+        <label for="depart_type">Departure date:</label><br>
+        <input type="number" id="depart_value" name="depart_value" min="1" placeholder="10">
+        <select id="depart_unit" name="depart_unit">
+            <option value="days">Days</option>
+            <option value="months">Months</option>
+        </select>
+        <p>or enter exact date (YYYY-MM-DD):</p>
+        <input type="text" id="depart_date" name="depart_date" placeholder="2025-10-15"><br><br>
+
+        <label for="adults">Adults:</label>
+        <input type="number" id="adults" name="adults" min="1" value="1" required><br><br>
+
+        <label for="direct">Direct flights only?</label>
+        <select id="direct" name="direct">
+            <option value="NO">NO</option>
+            <option value="YES">YES</option>
+        </select><br><br>
+
+        <label for="currency">Currency (e.g. USD, EUR):</label>
+        <input type="text" id="currency" name="currency" value="USD"><br><br>
+
+        <button type="submit">Search</button>
+    </form>
+
+    {% if flights %}
+        <h2>Results:</h2>
+        <ul>
+        {% for f in flights %}
+            <li>
+                Price: {{ f.price.total }} {{ f.price.currency }}<br>
+                Segments:
+                <ul>
+                {% for seg in f.itineraries[0].segments %}
+                    <li>{{ seg.departure.iataCode }} → {{ seg.arrival.iataCode }}</li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+</body>
+</html>
