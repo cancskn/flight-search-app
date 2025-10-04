@@ -28,7 +28,7 @@ AMADEUS_CLIENT_SECRET=your_client_secret
 ---
 
 ```bash
-URL: Run and go to http://127.0.0.1:5000/
+URL: http://127.0.0.1:5000/
 ```
 
 
