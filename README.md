@@ -1,6 +1,7 @@
 ### Flight Search App using Amadeus API + Flask
 
-A Flask-based web application that uses the Amadeus API to search and display flight offers based on user input — including origin, destination, travel date, passenger count, currency, and direct-flight filter.
+Flask web application using the Amadeus API to search and display flight offers based on user input - 
+including origin, destination, travel date, passenger count, currency, and direct-flight filter.
 
 ---
 
