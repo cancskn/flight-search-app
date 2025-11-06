@@ -1,7 +1,6 @@
-### A sample flight searching app using Amadeus API sdk + Flask, Htnl
+### Flight Search App using Amadeus API + Flask
 
-This is a simple app that shows how to use the [Amadeus Python SDK](https://github.com/amadeus4dev/amadeus-python) with a Flask web interface.  
-It allows users to search for flight offers by entering origin, destination, date, passenger count, currency, and whether to filter for direct flights only. After submitting the form, the results are displayed on the same page below the form.
+A simple Flask web application that lets users search flight offers by origin, destination, date, passenger count, currency, and direct-flight preference. Results appear below the form on the same page.
 
 ---
 
